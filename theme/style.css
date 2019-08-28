@@ -1,0 +1,149 @@
+body {
+    background: #ccc;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 3em;
+    padding-left: 20%;
+}
+
+/* sidebar */
+@media only screen and (min-width: 600px) {
+    aside {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        background: #777;
+        top: 0;
+        left: 0;
+        padding: 30px;
+    }
+
+    aside img:first-of-type {
+        max-width: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    aside h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    aside p {
+        text-align: center;
+        padding: 0 15px;
+        margin-top: -1em;
+    }
+
+    aside ul.links {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    aside ul.links li {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    aside ul.links li:before {
+        content: "\2B9A    ";
+    }
+
+    aside ul.links li:after {
+        content: "    \2B98"
+    }
+
+    aside ul.social {
+        list-style: none;
+        margin: 50px auto 0;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    aside ul.social img {
+        border-radius: 50%;
+        padding: 10px;
+        max-width: 50px;
+        margin: 0 5px;
+    }
+
+    aside ul.social img.twitter {
+        background: #38A1F3;
+    }
+
+    aside ul.social img.github {
+        background: black;
+    }
+}
+
+/* MASONRY GRID: courtesy of https://w3bits.com/css-masonry */
+
+main {
+    column-count: 2;
+    column-gap: 1.5em;
+    margin: 1.5em auto;
+    max-width: 80%;
+    overflow: hidden;
+    padding-left: 20%;
+}
+
+figure { /* Masonry bricks or child elements */
+    background-color: #eee;
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    box-shadow: 10px 10px 7px darkgrey;
+    transition: all .5s ease-in-out;
+}
+
+figure img {
+    max-width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+figure:hover {
+    width: 105%;
+    margin-left: -2.5%;
+    transition: all .5s ease-in-out;
+}
+
+figure:hover img {
+    opacity: .8;
+    transition: all .5s ease-in-out;
+}
+
+html {
+    box-sizing: border-box;
+}
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+}
+  
+/* Masonry on large screens */
+@media only screen and (min-width: 1024px) {
+    .main {
+        column-count: 3;
+    }
+}
+  
+/* Masonry on medium-sized screens */
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .main {
+        column-count: 2;
+    }
+  }
+  
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+    .main {
+        column-count: 1;
+    }
+}
