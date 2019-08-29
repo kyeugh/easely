@@ -10,7 +10,7 @@ header h1 {
 }
 
 /* sidebar on desktop */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (orientation: landscape) {
     aside {
         height: 100%;
         width: 20%;
@@ -21,11 +21,25 @@ header h1 {
         padding: 30px;
     }
 
+    aside p {
+        text-align: center;
+        padding: 0 15px;
+        margin-top: -1em;
+    }
+
     aside img:first-of-type {
         max-width: 150px;
         border-radius: 50%;
         display: block;
         margin: 0 auto;
+    }
+
+    aside ul.social {
+        list-style: none;
+        margin: 50px auto 0;
+        display: flex;
+        justify-content: center;
+        padding: 0;
     }
 
     aside button {
@@ -47,6 +61,12 @@ header h1 {
         z-index: 99;
     }
 
+    aside p {
+        text-align: center;
+        padding: 0 15px;
+        margin-top: -1em;
+    }
+
     #more {
         text-align: center;
     }
@@ -64,12 +84,39 @@ header h1 {
     
     #bottom {
         display: none;
-        transition: all .2s ease-in-out;
+        position: absolute;
+        margin-top: 33px;
+        left: 0;
+        padding: 0;
+        width: 100%;
+        box-shadow: 0 10px 7px #00000088;
+    }
+
+    aside ul.links {
+        background: #dadada;
+        margin: 0;
+    }
+
+    aside ul.links li {
+        border-bottom: 2px ridge lightgrey;
+        padding: 7px 0;
+    }
+
+    aside ul.links li:hover {
+        background: white;
+    }
+
+    aside ul.social {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 16px 0;
+        background: #777777;
     }
 
     .revealed {
         display: block !important;
-        transition: all .2s ease-in-out;
     }
 
     aside img:first-of-type {
@@ -89,17 +136,38 @@ header h1 {
     }
 }
 
+/* sidebar on mobile landscape */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    aside img:first-of-type {
+        max-width: 75px;
+    }
+
+    aside h2 {
+        margin: 0 0 .5em;
+    }
+
+    aside p {
+        font-size: .7em;
+        padding: 0;
+    }
+
+    #bottom {
+        font-size: .6em;
+    }
+
+    aside ul.social {
+        position: absolute;
+        left: 50%;
+        bottom: 15px;
+        margin: 0 0 0 -60px;
+    }
+}
+
 /* sidebar shared */
 aside h2 {
     text-align: center;
     font-size: 2em;
     margin-bottom: .5em;
-}
-
-aside p {
-    text-align: center;
-    padding: 0 15px;
-    margin-top: -1em;
 }
 
 aside ul.links {
@@ -118,14 +186,6 @@ aside ul.links li:before {
 
 aside ul.links li:after {
     content: "    \2B98"
-}
-
-aside ul.social {
-    list-style: none;
-    margin: 50px auto 0;
-    display: flex;
-    justify-content: center;
-    padding: 0;
 }
 
 aside ul.social img {
