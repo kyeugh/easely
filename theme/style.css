@@ -1,5 +1,6 @@
 body {
     background: #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header h1 {
@@ -89,6 +90,7 @@ header h1 {
         position: sticky;
         padding: 10px 10px 5px;
         margin: -10px 0 0 -10px;
+        z-index: 99;
     }
 
     #bottom {
