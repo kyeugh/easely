@@ -1,5 +1,6 @@
 body {
-    background: #ccc;
+    background: url("assets/ignasi_pattern_s.png");
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,10 +16,38 @@ header h1 {
         height: 100%;
         width: 20%;
         position: fixed;
-        background: #777;
         top: 0;
         left: 0;
-        padding: 30px;
+        box-shadow: 10px 0 10px #00000050;
+        border-right: 5px outset white;
+    }
+
+    aside #top {
+        margin: 30px 15px;
+    }
+
+    aside h2 {
+        margin: .75em 0;
+    }
+
+    aside ul.links {
+        margin: 0;
+    }
+
+    aside ul.links li {  
+        padding: 7px;
+        transition: all .2s ease-in-out;
+        margin-bottom: 3px;
+    }
+
+    aside ul.links li:hover {
+        background: white;
+        color: black;
+        transition: all .2s ease-in-out;
+    }
+
+    aside ul.links li:hover > a {
+        color: black;
     }
 
     aside p {
@@ -36,10 +65,17 @@ header h1 {
 
     aside ul.social {
         list-style: none;
-        margin: 50px auto 0;
+        margin: 50px auto 0 -60px;
         display: flex;
         justify-content: center;
         padding: 0;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+    }
+
+    aside ul.social li:hover {
+        filter: brightness(1.1);
     }
 
     aside button {
@@ -52,13 +88,13 @@ header h1 {
     aside {
         height: min-content;
         width: 105%;
-        background: #777;
         top: 0;
         left: 0;
         position: sticky;
         padding: 10px 10px 5px;
         margin: -10px 0 0 -10px;
         z-index: 99;
+        border-bottom: 5px white outset;
     }
 
     aside p {
@@ -80,12 +116,14 @@ header h1 {
         outline: none;
         cursor: pointer;
         margin: -.5em auto .5em;
+        border: 3px solid white;
     }
     
     #bottom {
         display: none;
+        background: #00000050;
         position: absolute;
-        margin-top: 33px;
+        margin-top: 37px;
         left: 0;
         padding: 0;
         width: 100%;
@@ -93,13 +131,14 @@ header h1 {
     }
 
     aside ul.links {
-        background: #dadada;
         margin: 0;
+        background: #000000c7;
     }
 
-    aside ul.links li {
-        border-bottom: 2px ridge lightgrey;
-        padding: 7px 0;
+    aside ul.links li {  
+        border-bottom: 2px solid white;
+        padding: 7px;
+        transition: all .2s ease-in-out;
     }
 
     aside ul.links li:hover {
@@ -110,9 +149,10 @@ header h1 {
         list-style: none;
         display: flex;
         justify-content: center;
-        margin: 0;
+        margin: -.2px 0 0 0;
         padding: 16px 0;
-        background: #777777;
+        background: #00000096;
+        border-bottom: 5px white outset;
     }
 
     .revealed {
@@ -164,10 +204,21 @@ header h1 {
 }
 
 /* sidebar shared */
+aside {
+    background: #00000070;
+    color: white;
+}
+
 aside h2 {
     text-align: center;
     font-size: 2em;
-    margin-bottom: .5em;
+    font-weight: bolder;
+    font-variant: small-caps;
+    border: 5px solid white;
+    line-height: 1;
+    padding: 10px 0 15px;
+    width: 80%;
+    margin: 30px auto;
 }
 
 aside ul.links {
@@ -178,14 +229,26 @@ aside ul.links {
 aside ul.links li {
     font-size: 1.5em;
     text-align: center;
+    background: #ffffff8a;
 }
 
 aside ul.links li:before {
-    content: "\2B9A    ";
+    font-size: .5em;
+    padding-right: 1em;
+    vertical-align: middle;
+    content: "\269E";
 }
 
 aside ul.links li:after {
-    content: "    \2B98"
+    font-size: .5em;
+    padding-left: 1em;
+    vertical-align: middle;
+    content: "\269F"
+}
+
+aside ul.links li a {
+    color: white;
+    text-decoration: none;
 }
 
 aside ul.social img {
@@ -219,7 +282,7 @@ figure { /* Masonry bricks or child elements */
     width: 100%;
     padding: 1em;
     margin: 0 0 1.5em;
-    box-shadow: 10px 10px 7px darkgrey;
+    box-shadow: 10px 10px 7px #000000c3;
     transition: all .5s ease-in-out;
     color: initial;
 }
