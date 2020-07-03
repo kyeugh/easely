@@ -3,10 +3,12 @@
 {% block title %}Categories / {{ SITENAME }}{% endblock %}
 
 {% block content %}
-    <h1>Categories on {{ SITENAME }}</h1>
+<content>
+    <h1>Categories</h1>
     <ul>
     {% for category, articles in categories|sort|sort %}
         <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})</li>
     {% endfor %}
     </ul>
+</content>
 {% endblock %}

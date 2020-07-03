@@ -4,7 +4,7 @@ body {
     font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
     min-height: calc(100% - calc(20px + 1em));
     position: relative;
-    padding-bottom: calc(20px + 1em);
+    padding-bottom: calc(50px + 1em);
 }
 
 @media (min-width: 900px) {
@@ -76,14 +76,29 @@ body {
         text-decoration: none
     }
 
+    header {
+        width: 75%;
+        margin: 0 auto;
+    }
+
     content {
-        display: block;
-        background-color: #eee;
-        box-shadow: 10px 10px 7px #000000c3;
-        margin: 1.5em auto;
-        padding: 40px 40px 60px;
         width: 55%;
         margin-left: 25%;
+        margin-bottom: 30px;
+    }
+
+    content {
+        padding: 40px;
+    }
+
+    header {
+        padding: 1px 40px;
+    }
+
+    content img {
+        max-height: 750px;
+        display: block;
+        margin: 0 auto 30px;
     }
 
     main {
@@ -122,14 +137,15 @@ body {
     }
 
     aside #drawer > ul.links {
-        margin-bottom: 0
+        margin-bottom: 0;
+        display: flex;
     }
 
     aside #drawer > ul.links li {
         display: inline-block;
-        width: 32%;
+        width: 100%;
         text-align:center;
-        padding-bottom: 5px;
+        padding: 0 5px 5px;
     }
 
     aside #drawer > ul.links li a {
@@ -137,9 +153,23 @@ body {
         color: #555;
     }
 
+    content {
+        padding: 15px 30px;
+    }
+
+    header {
+        padding: 1px;
+        margin-bottom: 15px;
+    }
+
     footer {
         width: 90%;
     }
+}
+
+aside h2 a {
+    color: #000;
+    text-decoration: none;
 }
 
 aside #drawer > ul.links {
@@ -156,6 +186,10 @@ figure {
     box-shadow: 10px 10px 7px #000000c3;
     transition: all .5s ease-in-out;
     color: initial
+}
+
+figure a {
+    text-decoration: none;
 }
 
 figure h2 a {
@@ -182,6 +216,91 @@ figure:hover img {
 figcaption {
     padding-top: .5em;
     text-align: center
+}
+
+a figcaption {
+    color: #000;
+}
+
+content, header {
+    display: block;
+    background-color: #eee;
+    box-shadow: 10px 10px 7px #000000c3;
+}
+
+header {
+    text-align: center;
+}
+
+content h1 {
+    margin-bottom: 0;
+}
+
+content h1 a {
+    color: #000;
+    text-decoration: none;
+}
+
+content img {
+    max-width: 100%;
+}
+
+p.articleInfo {
+    display: inline-block;
+    margin: .25em auto 0;
+}
+
+ul.tags {
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-block;
+}
+
+ul.tags > li {
+    transition: all .2s ease-in-out;
+    display: inline;
+    padding: 2px;
+}
+
+ul.tags > li:hover {
+    transition: all .2s ease-in-out;
+    background: #fff;
+}
+
+ul.tags > li a {
+    text-decoration: none;
+}
+
+ul.paginator {
+    list-style-type: none;
+    width: 15em;
+    display: block;
+    margin: 0 auto -10px;
+    background-color: #eee;
+    box-shadow: 10px 10px 7px #000000c3;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+ul.paginator > li {
+    display: inline-block;
+}
+
+ul.paginator > li a {
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    width: 1.25em;
+    text-decoration: none;
+}
+
+ul.paginator > li a:hover {
+    background: #fff;
+    color: #000;
+    transition: all .2s ease-in-out;
 }
 
 html {
@@ -216,7 +335,18 @@ footer a:hover {
     background: #fff;
 }
 
-footer a[href*="twitter.com"] {
+footer ul.social {
+    display: inline-block;
+    list-style-type: none;
+    float: right;
+    margin: 0;
+}
+
+footer ul.social > li {
+    display: inline-block;
+}
+
+footer ul.social > li a[href*="twitter.com"] {
     background-image: url("assets/twitter.png");
     background-repeat: no-repeat;
     background-position: 1em 50%;

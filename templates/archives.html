@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} archives{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Archives</h1>
+</header>
+{% for article in articles %}
+    {% if loop.index0 == 0 or articles[loop.index0 - 1].date.year != article.date.year %}
+    {% if loop.index0 > 0 %}
+    <hr>
+    {% endif %}
+    </main><header><h2>{{ article.date.year }}</h2></header><main>
+    {% endif %}
+
+    <figure style="background: #dfded6;">
+        <h3 style="text-align: center">{{ article.date | strftime("%b %d") }}</h3>
+        {% if article.image %}
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <img src="{{ SITEURL }}/art/{{ article.image }}" />
+                <figcaption>{{ article.title }}</figcaption>
+            </a>
+            {% else %}
+            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+            <p>{{ article.summary }}</p>
+            <p><a href="{{ SITEURL }}/{{ article.url }}">Read more...</a></p>
+            {% endif %}
+    </figure>
+    </article>
+{% endfor %}
+</content>
+{% endblock %}

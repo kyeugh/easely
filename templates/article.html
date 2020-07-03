@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title | striptags }} / {{ SITENAME }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    {% for tag in article.tags %}
+        <meta name="tags" content="{{tag}}" />
+    {% endfor %}
+    <meta name="og:type" content="article" />
+    <meta name="og:article:published_time" content="{{ article.date.isoformat() }}" />
+    <meta name="og:title" content="{{ article.title | striptags }}" />
+    <meta name="og:description" content="art by kyeugh" />
+    <meta name="twitter:site" content="@kyeugh" />
+    {% if article.image %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="og:image" content="{{ SITEURL }}/art/{{ article.image }}" />
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    <meta name="og:image" content="{{ SITEURL }}/theme/assets/avatar.jpg" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<content>
+    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title | striptags }}</a></h1>
+    <p class="articleInfo">
+        Posted
+        <time datetime="{{ article.date.isoformat() }}" pubdate>
+            {{ article.locale_date }}
+        </time>
+        {% if article.category %}
+        in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        {% endif %}
+        &#9672;
+    </p>
+    <ul class="tags">
+        {% for tag in article.tags %}
+            <li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if article.image %}
+    <a href="{{ SITEURL }}/art/{{ article.image }}"><img src="{{ SITEURL }}/art/{{ article.image }}" /></a>
+    {% endif %}
+    {{ article.content }}
+</content>
+{% endblock %}

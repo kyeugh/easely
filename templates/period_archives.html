@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ period | reverse | join(' ') }} archives / {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Archives for {{ period | reverse | join(' ') }}</h1>
+</header>
+<main>
+    {% for article in dates %}
+        <figure>
+            {% if article.image %}
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                <img src="{{ SITEURL }}/art/{{ article.image }}" />
+                <figcaption>{{ article.title }}</figcaption>
+            </a>
+            {% else %}
+            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+            <p>{{ article.summary }}</p>
+            <p><a href="{{ SITEURL }}/{{ article.url }}">Read more...</a></p>
+            {% endif %}
+        </figure>
+    {% endfor %}
+</main>
+{% endblock %}

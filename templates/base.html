@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="utf-8">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <meta name="author" content="{{ AUTHOR }}">
@@ -14,30 +15,38 @@
             title="{{ SITENAME }} RSS Feed">
     {% endif %}
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ SITEURL }}/favicon.png" rel="icon">
-    <link href="{{ SITEURL }}/theme/css/style.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="{{ SITEURL }}/theme/style.css" media="screen, projection" rel="stylesheet" type="text/css">
+    {% endblock %}
 </head>
 
 <body>
     <aside>
         <div id="banner">
             <img src="{{ SITEURL }}/theme/assets/avatar.jpg" />
-            <h2>{{ SITENAME }}h</h2>
+            <h2><a href="{{ SITEURL }}">{{ SITENAME }}</a></h2>
         </div>
+        {% if LINKS %}
         <div id="drawer">
             <ul class="links">
-                <li><a href="#">portrait</a></li>
-                <li><a href="#">landscape</a></li>
-                <li><a href="#">fanart</a></li>
+                {% for name, link in LINKS %}
+                <li><a href="{{ link }}">{{ name }}</a></li>
+                {% endfor %}
             </ul>
         </div>
+        {% endif %}
     </aside>
     {% block content %}{% endblock %}
     <footer>
         <a href="https://kyeugh.online">back to main site</a>
-        <a href="https://twitter.com/kyeugh" style="float: right">twitter</a>
-        <br />
-        <a href="https://github.com/getpelican/pelican">powered by Pelican</a>
+        {% if SOCIAL %}
+        <ul class="social">
+            {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </footer>
 </body>
 </html>
