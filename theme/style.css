@@ -1,3 +1,10 @@
+body {
+    background: url("assets/background.jpg");
+    background-attachment: fixed;
+    font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    height: 100vh;
+}
+
 @media (min-width: 900px) {
     aside {
         max-width: 15%;
@@ -166,10 +173,7 @@ figcaption {
 }
 
 html {
-    box-sizing: border-box;
-    background: url("assets/background.jpg");
-    background-attachment: fixed;
-    font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif
+    box-sizing: border-box
 }
 
 *,:before,:after {
