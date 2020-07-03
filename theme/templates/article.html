@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title | striptags }} / {{ SITENAME }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    {% for tag in article.tags %}
+        <meta name="tags" content="{{tag}}" />
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+<content>
+    <h1>{{ article.title | striptags }}</h1>
+    <time datetime="{{ article.date.isoformat()" pubdate>
+        {{ article.locale_date }}
+    </time>
+    <p class="articleCategory">Posted in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+    <ul class="tags">
+        {% for tag in article.tags %}
+            <li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+    <img src="{{ SITEURL }}/art/{{ article.image }}" />
+    {{ article.content }}
+</content>
+{% endblock %}
