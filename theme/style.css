@@ -1,282 +1,140 @@
 body {
-    background: url("assets/ignasi_pattern_s.png");
+    background: url("assets/background.jpg");
     background-attachment: fixed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif
 }
 
-header h1 {
-    text-align: center;
-    font-size: 3em;
-    padding-left: 20%;
-}
-
-/* sidebar on desktop */
-@media only screen and (min-width: 600px) and (orientation: landscape) {
+@media (min-width: 900px) {
     aside {
-        height: 100%;
-        width: 20%;
+        max-width: 15%;
         position: fixed;
         top: 0;
         left: 0;
-        box-shadow: 10px 0 10px #00000050;
-        border-right: 5px outset white;
+        margin: 7% auto auto 7%;
     }
 
-    aside #top {
-        margin: 30px 15px;
+    aside #banner {
+        padding: 30px 20px;
+        background: #eee;
+        box-shadow: 10px 10px 7px #000000c3;
+    }
+
+    aside img:first-of-type {
+        width: 100%;
+        max-width: 175px;
+        border-radius: 50%;
+        display: flex;
+        margin: 0 auto
     }
 
     aside h2 {
-        margin: .75em 0;
-    }
-
-    aside ul.links {
-        margin: 0;
-    }
-
-    aside ul.links li {  
-        padding: 7px;
-        transition: all .2s ease-in-out;
-        margin-bottom: 3px;
-    }
-
-    aside ul.links li:hover {
-        background: white;
-        color: black;
-        transition: all .2s ease-in-out;
-    }
-
-    aside ul.links li:hover > a {
-        color: black;
+        text-align: center;
+        font-size: 1.85em;
+        font-weight: bolder;
+        line-height: 1;
     }
 
     aside p {
         text-align: center;
         padding: 0 15px;
-        margin-top: -1em;
+        margin-top: -1em
     }
 
-    aside img:first-of-type {
-        max-width: 150px;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto;
+    aside #drawer {
+        margin: 7% 7% 0;
     }
 
-    aside ul.social {
-        list-style: none;
-        margin: 50px auto 0 -60px;
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
+    aside #drawer > ul.links {
+        margin: 0
     }
 
-    aside ul.social li:hover {
-        filter: brightness(1.1);
-    }
-
-    aside button {
-        display: none;
-    }
-}
-
-/* sidebar on mobile */
-@media only screen and (max-width: 599px), only screen and (orientation: portrait) {
-    aside {
-        height: min-content;
-        width: 105%;
-        top: 0;
-        left: 0;
-        position: sticky;
-        padding: 10px 10px 5px;
-        margin: -10px 0 0 -10px;
-        z-index: 99;
-        border-bottom: 5px white outset;
-    }
-
-    aside p {
-        text-align: center;
-        padding: 0 15px;
-        margin-top: -1em;
-    }
-
-    #more {
-        text-align: center;
-    }
-
-    aside button {
-        padding: 0 75px;
-        color: #ccc;
-        background-color: #0003;
-        background-repeat: no-repeat;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        margin: -.5em auto .5em;
-        border: 3px solid white;
-    }
-    
-    #bottom {
-        display: none;
-        background: #00000050;
-        position: absolute;
-        margin-top: 37px;
-        left: 0;
-        padding: 0;
-        width: 100%;
-        box-shadow: 0 10px 7px #00000088;
-    }
-
-    aside ul.links {
-        margin: 0;
-        background: #000000c7;
-    }
-
-    aside ul.links li {  
-        border-bottom: 2px solid white;
+    aside #drawer > ul.links li {
+        background: #eee;
+        box-shadow: 10px 10px 7px #000000c3;
         padding: 7px;
         transition: all .2s ease-in-out;
+        margin-bottom: 0.33em;
+        font-size: 1.5em;
+        text-align: center;
     }
 
-    aside ul.links li:hover {
-        background: white;
+    aside #drawer > ul.links li:hover {
+        background: #fff;
+        transition: all .2s ease-in-out
     }
 
-    aside ul.social {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin: -.2px 0 0 0;
-        padding: 16px 0;
-        background: #00000096;
-        border-bottom: 5px white outset;
+    aside #drawer > ul.links li:hover > a {
+        color: #000;
+        transition: all .2s ease-in-out
     }
 
-    .revealed {
-        display: block !important;
-    }
-
-    aside img:first-of-type {
-        max-width: 75px;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto -1.5em;
-    }
-
-    header h1 {
-        margin-top: 50%;
-        padding-left: 0 !important;
+    aside #drawer > ul.links li a {
+        color: #555;
+        text-decoration: none
     }
 
     main {
-        padding-left: 0 !important;
+        column-gap: 1.5em;
+        margin: 1.5em auto;
+        max-width: 80%;
+        overflow: hidden;
+        padding-left: 20%;
+        column-count: 3;
+    }
+
+    footer {
+        width: 70%;
     }
 }
 
-/* sidebar on mobile landscape */
-@media only screen and (max-width: 900px) and (orientation: landscape) {
+@media (max-width: 900px) {
+    aside {
+        margin-top: -10px;
+        width: 100%;
+        background: #eee;
+        box-shadow: 10px 10px 7px #000000c3;
+    }
+
     aside img:first-of-type {
-        max-width: 75px;
+        display: none;
     }
-
+    
     aside h2 {
-        margin: 0 0 .5em;
+        text-align: center;
+        padding: 7px;
+    }
+    
+    aside #drawer {
+        margin: -8px auto 16px;
     }
 
-    aside p {
-        font-size: .7em;
-        padding: 0;
+    aside #drawer > ul.links {
+        margin-bottom: 0
     }
 
-    #bottom {
-        font-size: .6em;
+    aside #drawer > ul.links li {
+        display: inline-block;
+        width: 32%;
+        text-align:center;
+        padding-bottom: 5px;
     }
 
-    aside ul.social {
-        position: absolute;
-        left: 50%;
-        bottom: 15px;
-        margin: 0 0 0 -60px;
+    aside #drawer > ul.links li a {
+        text-decoration: none;
+        color: #555;
+    }
+
+    footer {
+        width: 90%;
     }
 }
 
-/* sidebar shared */
-aside {
-    background: #00000070;
-    color: white;
+aside #drawer > ul.links {
+    list-style-type: none;
+    padding-left: 0
 }
 
-aside h2 {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bolder;
-    font-variant: small-caps;
-    border: 5px solid white;
-    line-height: 1;
-    padding: 10px 0 15px;
-    width: 80%;
-    margin: 30px auto;
-}
-
-aside ul.links {
-    list-style: none;
-    padding-left: 0;
-}
-
-aside ul.links li {
-    font-size: 1.5em;
-    text-align: center;
-    background: #ffffff8a;
-}
-
-aside ul.links li:before {
-    font-size: .5em;
-    padding-right: 1em;
-    vertical-align: middle;
-    content: "\269E";
-}
-
-aside ul.links li:after {
-    font-size: .5em;
-    padding-left: 1em;
-    vertical-align: middle;
-    content: "\269F"
-}
-
-aside ul.links li a {
-    color: white;
-    text-decoration: none;
-}
-
-aside ul.social img {
-    border-radius: 50%;
-    padding: 10px;
-    max-width: 50px;
-    margin: 0 5px;
-}
-
-aside ul.social img.twitter {
-    background: #38A1F3;
-}
-
-aside ul.social img.github {
-    background: black;
-}
-
-/* MASONRY GRID: courtesy of https://w3bits.com/css-masonry */
-
-main {
-    column-gap: 1.5em;
-    margin: 1.5em auto;
-    max-width: 80%;
-    overflow: hidden;
-    padding-left: 20%;
-}
-
-figure { /* Masonry bricks or child elements */
+figure {
     background-color: #eee;
     display: inline-block;
     width: 100%;
@@ -284,57 +142,64 @@ figure { /* Masonry bricks or child elements */
     margin: 0 0 1.5em;
     box-shadow: 10px 10px 7px #000000c3;
     transition: all .5s ease-in-out;
-    color: initial;
+    color: initial
+}
+
+figure h2 a {
+    color: #000;
+    text-decoration: none;
 }
 
 figure img {
     max-width: 100%;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
 }
 
 figure:hover {
     width: 105%;
     margin-left: -2.5%;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
 }
 
 figure:hover img {
     opacity: .8;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
 }
 
 figcaption {
     padding-top: .5em;
-    text-align: center;
+    text-align: center
 }
 
 html {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+
+*,:before,:after {
+    box-sizing: inherit
 }
-  
-/* Masonry on large screens */
-@media only screen and (min-width: 1024px) {
-    main {
-        column-count: 3;
-    }
+
+footer {
+    margin: 0 auto 30px;
+    background: #eee;
+    box-shadow: 10px 10px 7px #000000c3;
 }
-  
-/* Masonry on medium-sized screens */
-  @media only screen and (max-width: 1023px) and (min-width: 768px) {
-    main {
-        column-count: 2;
-    }
-  }
-  
-/* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 540px) {
-    main {
-        column-count: 1;
-    }
+
+footer a {
+    text-decoration: none;
+    color: #5e439e;
+    display: inline-block;
+    padding: 15px;
+}
+
+footer a:hover {
+    color: black;
+    background: #fff;
+}
+
+footer a[href*="twitter.com"] {
+    background-image: url("assets/twitter.png");
+    background-repeat: no-repeat;
+    background-position: 1em 50%;
+    padding-left: calc(20px + 1em);
 }
