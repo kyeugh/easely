@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} / {{ SITENAME }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <meta name="og:type" content="article" />
+    <meta name="og:title" content="{{ page.title }}" />
+    <meta name="og:description" content="art by kyeugh" />
+    <meta name="twitter:site" content="@kyeugh" />
+    {% if page.image %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="og:image" content="{{ SITEURL }}/art/{{ page.image }}" />
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    <meta name="og:image" content="{{ SITEURL }}/theme/assets/avatar.jpg" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<content>
+    <h1><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></h1>
+    {% if page.image %}
+    <a href="{{ SITEURL }}/art/{{ page.image }}"><img src="{{ SITEURL }}/art/{{ page.image }}" /></a>
+    {% endif %}
+    {{ page.content }}
+</content>
+{% endblock %}

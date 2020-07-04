@@ -1,3 +1,8 @@
 {% extends "index.html" %}
 
 {% block title %}{{ tag }} / {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header>#{{ tag }}</header>
+{{ super() }}
+{% endblock %}
